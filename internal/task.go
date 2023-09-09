@@ -29,10 +29,16 @@ type Task struct {
 	DueDate     time.Time
 }
 
+// Project представляет проект с списком задач.
+// Структура содержит поле Tasks, которое является срезом задач,
+// где каждая задача представлена структурой Task.
 type Project struct {
 	Tasks []Task
 }
 
+// NewProject создает и возвращает новый экземпляр проекта.
+// Этот проект не содержит задач и может быть использован
+// как отправная точка для добавления задач.
 func NewProject() *Project {
 	return &Project{}
 }
@@ -51,7 +57,6 @@ func (p *Project) RemoveTask(taskID int) {
 			return
 		}
 	}
-
 }
 
 // UpdateTaskStatus TODO: изменяет статус задачи по заданному идентификатору
